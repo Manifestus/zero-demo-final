@@ -1,4 +1,4 @@
-# Material UI - Next.js App Router example in TypeScript
+# Zero-AI
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped using [`create-next-app`](https://github.com/vercel/next.js/tree/HEAD/packages/create-next-app) with Material UI installed.
 
@@ -16,8 +16,8 @@ cd material-ui-nextjs-ts
 Install it and run:
 
 ```bash
-npm install
-npm run dev
+yarn install
+yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
