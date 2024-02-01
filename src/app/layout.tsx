@@ -17,7 +17,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
             {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
             <CssBaseline />
             {login && <AuthScreen isLoggedIn={setLogin} />}
-            {!login && <>props.children</>}
+            {!login && <>{props.children}</>}
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
