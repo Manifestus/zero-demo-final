@@ -17,11 +17,15 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { Image, Label } from "@mui/icons-material";
 import Navbar from "@/components/Navbar";
 
-export default function AuthScreen() {
+export default function AuthScreen(props: { isLoggedIn: (value: boolean) => void }) {
   const [emailSignIn, setEmailSignIn] = useState(false);
 
   const handleEmailSignIn = () => {
     setEmailSignIn(true);
+  };
+
+  const handleLogin = () => {
+    props.isLoggedIn(false);
   };
 
   return (
@@ -121,6 +125,7 @@ export default function AuthScreen() {
                     variant="contained"
                     sx={{ backgroundColor: "white", color: "black" }}
                     startIcon={<GoogleIcon />}
+                    onClick={handleLogin}
                   >
                     Sign in with Google
                   </Button>

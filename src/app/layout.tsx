@@ -1,3 +1,4 @@
+"use client";
 import * as React from "react";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import { ThemeProvider } from "@mui/material/styles";
@@ -7,6 +8,7 @@ import Navbar from "@/components/Navbar";
 import AuthScreen from "./auth/page";
 
 export default function RootLayout(props: { children: React.ReactNode }) {
+  const [login, setLogin] = React.useState(true);
   return (
     <html lang="en">
       <body>
@@ -14,8 +16,8 @@ export default function RootLayout(props: { children: React.ReactNode }) {
           <ThemeProvider theme={theme}>
             {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
             <CssBaseline />
-            <AuthScreen />
-            {props.children}
+            {login && <AuthScreen isLoggedIn={setLogin} />}
+            {!login && <>props.children</>}
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
