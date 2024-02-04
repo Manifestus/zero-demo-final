@@ -46,7 +46,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
                         display: 'flex', flexDirection: 'column', 
                         minHeight: '100%',
                         width: "100%",
-                        minWidth: "min(100vh, 600px)",
+                        minWidth: "min(100vw, 600px)",
                         backgroundColor: "lightBlue",
                         
                         }}>
