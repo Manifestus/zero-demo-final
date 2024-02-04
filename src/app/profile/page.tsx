@@ -37,11 +37,12 @@ export default function ProfilePage() {
           style={{
             display: "flex",
             justifyContent: "center",
-            height: "75vh",
+            height: "100vh",
             width: "100%",
             background:
-              "linear-gradient(0deg, rgba(191,194,254,1) 74%, rgba(232,189,219,1) 100%)",
+              "linear-gradient(0deg, rgba(156,248,255,1) 0%, rgba(191,194,254,1) 40%, rgba(232,189,219,1) 100%)",
           }}
+          top={200}
           sx={{
             bgcolor: "background.paper",
             p: 3,
@@ -141,9 +142,9 @@ export default function ProfilePage() {
                 variant="h1"
                 component="h1"
                 color={"black"}
-                fontSize={"0.70rem"}
+                fontSize={"0.79rem"}
                 align="center"
-                fontWeight={"bold"}
+                fontWeight={"lightest"}
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -227,7 +228,14 @@ export default function ProfilePage() {
                       >
                         INTERESTS
                       </Typography>
-                      <Box sx={{ display: "flex", justifyContent: "center", width: "80%", height: "13vh" }}>
+                      <Box
+                        sx={{
+                          display: "flex",
+                          justifyContent: "center",
+                          width: "80%",
+                          height: "13vh",
+                        }}
+                      >
                         <Typography
                           variant="h1"
                           component="h1"
@@ -235,8 +243,8 @@ export default function ProfilePage() {
                           fontSize={"0.79rem"}
                           fontWeight={"lightest"}
                         >
-                          #Lorem #ipsum #dolor #sit amet #consectetur #adipiscing
-                          #elit #sed #do #eiusmod 
+                          #Lorem #ipsum #dolor #sit amet #consectetur
+                          #adipiscing #elit #sed #do #eiusmod
                         </Typography>
                       </Box>
                     </Stack>
@@ -244,6 +252,39 @@ export default function ProfilePage() {
                 </Box>
               </Grid>
             </Grid>
+            <Typography
+              variant="h1"
+              component="h1"
+              color={"black"}
+              fontSize={"0.89rem"}
+              fontWeight={"bold"}
+              sx={{ position: "absolute", top: 290 }}
+            >
+              LET'S CONNECT!
+            </Typography>
+
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                position: "absolute",
+                top: 320,
+                width: "100%",
+              }}
+            >
+              <Grid container spacing={{ xs: 1, md: 3 }}>
+                {[...Array(9)].map((_, index) => (
+                  <Grid item xs={3} sm={6} md={4} key={index}>
+                    <Box
+                      component="img"
+                      src="/path/to/your/image.jpg" // Replace with your image path
+                      sx={{ width: "100%", height: "auto" }}
+                      alt="Image"
+                    />
+                  </Grid>
+                ))}
+              </Grid>
+            </Box>
           </Box>
         </Box>
       </Box>

@@ -21,6 +21,7 @@
     "react-dom": "latest"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.4.0",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
