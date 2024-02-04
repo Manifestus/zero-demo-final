@@ -11,6 +11,7 @@ import { Typography } from "@mui/material";
 
 // import BottomMenu from "@/components/BottomMenu";
 import AuthScreen from "./auth/page";
+import ProfileAndSettingsRow from "@/components/ProfileAndSettingsRow";
 import BottomMenu from "@/components/BottomMenu";
 
 export default function RootLayout(props: { children: React.ReactNode }) {
@@ -36,30 +37,14 @@ export default function RootLayout(props: { children: React.ReactNode }) {
               <Box 
                 sx= {{ display: "flex", flexDirection: "column",
                 maxWidth: "1200px" , minHeight: "100%", "flex": 1, overflowY: "auto",
+                minWidth: "min(100vw, 600px)",
+                overflowX: "hidden",
               }}>
 
             
             {login && <AuthScreen isLoggedIn={setLogin} />}
             {!login && 
-                <>
-                  <Box sx={{ 
-                        display: 'flex', flexDirection: 'column', 
-                        minHeight: '100%',
-                        width: "100%",
-                        minWidth: "min(100vw, 600px)",
-                        overflowX: "hidden",
-                        backgroundColor: "lightBlue",
-                        
-                        }}>
-                    {/* Main Content Area */}
-                    <Box component="main" sx={{ flex: '1 1 auto'}}>
-                      { props.children }
-                    </Box>
-                    
-                    {/* Fixed Footer */}
-                    <BottomMenu/>
-                  </Box>
-                </>
+              <LoggedInLayout>{props.children}</LoggedInLayout>
             }
             </Box>
             </Box>
@@ -68,4 +53,30 @@ export default function RootLayout(props: { children: React.ReactNode }) {
       </body>
     </html>
   );
+}
+
+const LoggedInLayout = (props:{children:React.ReactNode}) =>
+{
+  return <>
+    <Box sx={{ 
+          display: 'flex', flexDirection: 'column', 
+          minHeight: '100%',
+          width: "100%",
+          // minWidth: "min(100vw, 600px)",
+          // overflowX: "hidden",
+          backgroundColor: "transparent",
+          
+          }}>
+      {/* Profile and Settings */}
+      <ProfileAndSettingsRow></ProfileAndSettingsRow>
+
+      {/* Main Content Area */}
+      <Box component="main" sx={{ flex: '1 1 auto'}}>
+        { props.children }
+      </Box>
+      
+      {/* Fixed Footer */}
+      <BottomMenu/>
+    </Box>
+  </>
 }

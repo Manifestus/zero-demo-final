@@ -35,7 +35,6 @@ export default function AuthScreen(props: { isLoggedIn: (value: boolean) => void
           // display: "flex", flexDirection: "column",
 
           width: "100%",
-          minWidth: "600px",
           minHeight: "100%",
           
           backgroundImage: `url("https://res.cloudinary.com/du7w5i2uh/image/upload/v1706639472/PAGE_1_-_Background_hrbsjh.png")`,
