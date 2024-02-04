@@ -13,7 +13,7 @@ import { Typography } from "@mui/material";
 import AuthScreen from "./auth/page";
 import BottomMenu from "@/components/BottomMenu";
 
-export default function RootLayout({ children }) {
+export default function RootLayout(props: { children: React.ReactNode }) {
   const [login, setLogin] = React.useState(true);
   return (
     <html lang="en">
@@ -52,7 +52,7 @@ export default function RootLayout({ children }) {
                         }}>
                     {/* Main Content Area */}
                     <Box component="main" sx={{ flex: '1 1 auto', overflowY: 'auto', py: 2, px: 3 }}>
-                      { children }
+                      { props.children }
                     </Box>
                     
                     {/* Fixed Footer */}
