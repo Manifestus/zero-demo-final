@@ -22,16 +22,13 @@ export default function RootLayout(props: { children: React.ReactNode }) {
           <ThemeProvider theme={theme}>
             {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
             <CssBaseline />
-
             {login && <AuthScreen isLoggedIn={setLogin} />}
             {!login && (
               <>
                 {/* Main Content Area */}
                 {props.children}
                 {/* Fixed Footer */}
-                <Box sx={{ position: "fixed", bottom: 0, zIndex: 1000, width: "100vw" }}>
                   <BottomMenu />
-                </Box>
               </>
             )}
           </ThemeProvider>

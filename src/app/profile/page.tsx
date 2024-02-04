@@ -40,7 +40,7 @@ export default function ProfilePage() {
             height: "100vh",
             width: "100%",
             background:
-              "linear-gradient(0deg, rgba(156,248,255,1) 0%, rgba(191,194,254,1) 40%, rgba(232,189,219,1) 100%)",
+              "linear-gradient(180deg, rgb(218 189 232) 0%, rgb(189 197 254) 50%, rgb(187 222 241) 100%)",
           }}
           top={200}
           sx={{
