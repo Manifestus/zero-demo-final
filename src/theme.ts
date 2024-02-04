@@ -26,7 +26,9 @@ const theme = createTheme({
           height: "100%",
           display: "flex",
           flexDirection: "column",
+          backgroundColor: "lightblue",
         },
+
       }),
     },
     MuiAlert: {

@@ -2,8 +2,11 @@
 {
     position: relative;
     
-    min-height: 150px;
-    margin-bottom: -75px;
+    height: 75px;
+    /* min-height: 150px; */
+    /* margin-bottom: -75px; */
+
+    /* clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%); */
 
     border-radius: 50% 50% 0 0;
 
