@@ -31,22 +31,16 @@ export default function AuthScreen(props: { isLoggedIn: (value: boolean) => void
   return (
     <>
       <Box
-        sx={{
-          // display: "flex", flexDirection: "column",
-
-          width: "100%",
-          minWidth: "600px",
-          minHeight: "100%",
-          
+        style={{
           backgroundImage: `url("https://res.cloudinary.com/du7w5i2uh/image/upload/v1706639472/PAGE_1_-_Background_hrbsjh.png")`,
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
-         
+          width: "100vw",
         }}
       >
-        {/* <Box
-          sx={{
+        <Box
+          style={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -73,33 +67,21 @@ export default function AuthScreen(props: { isLoggedIn: (value: boolean) => void
             >
               <img
                 height={"100vh"}
-                src="https://res.cloudinary.com/du7w5i2uh/image/upload/v1706639471/OAI_Placeholder_Logo_-_V1Asset_1_1_isweh1.svg"
+                src="https://res.cloudinary.com/du7w5i2uh/image/upload/v1706895305/OAI_-_PLACEHOLDER_LOGO_zcu9as.png"
               />
-            </Box> */}
-            <Box 
-              // spacing={1}
-              // direction="column"
-              // justifyContent={""}
-              // alignItems={"center"}
-              sx={{ display: "flex", flexDirection: "column", alignItems: "center", minHeight: "100%",
-
-              }}
+            </Box>
+            <Stack
+              spacing={1}
+              direction="column"
+              justifyContent={"center"}
+              alignItems={"center"}
             >
-              <Box 
-              // spacing={1}
-              // direction="column"
-              // justifyContent={""}
-              // alignItems={"center"}
-              sx={{ display: "flex", flexDirection: "column", alignItems: "center", flexGrow: 1,
-
-              }}
-              >
               <Typography
                 variant="h6"
                 component="h1"
                 color={"white"}
                 fontWeight={"normal"}
-                sx={{ mb: 2, marginTop: "30%" }}
+                sx={{ mb: 2 }}
               >
                 Welcome to ZERO-AI
               </Typography>
@@ -115,127 +97,121 @@ export default function AuthScreen(props: { isLoggedIn: (value: boolean) => void
                 Bringing Humanity Together,
                 <br /> One Connection at a Time
               </Typography>
-
-              <Box
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  flexDirection: "column",
-                  flexGrow: 1,
-                }}
-              >
-                {!emailSignIn ? (
-                  <>
-                    <Stack spacing={1} direction="column">
-                      <Button
-                        variant="contained"
-                        sx={{
-                          backgroundColor:
-                            "rgba(232,189,219,1) 1",
-                        }}
-                        onClick={handleEmailSignIn}
-                      >
-                        Sign in with Email
-                      </Button>
-                      <Button
-                        variant="contained"
-                        sx={{ backgroundColor: "white", color: "black" }}
-                        startIcon={<GoogleIcon />}
-                        onClick={handleLogin}
-                      >
-                        Sign in with Google
-                      </Button>
-                      <Button variant="contained" startIcon={<FacebookIcon />}>
-                        Sign in with Facebook
-                      </Button>
-
-                      <Button variant="contained">Sign Up</Button>
-                    </Stack>
-                  </>
-                ) : (
-                  <Stack spacing={2} direction="column">
-                    <Button
-                      startIcon={<ArrowBackIcon />}
-                      onClick={() => setEmailSignIn(false)}
-                      sx={{
-                        position: "absolute",
-                        top: 60,
-                        left: 8,
-                        color: "white",
-                      }}
-                    >
-                      Back
-                    </Button>
-                    <TextField label="Email" variant="outlined" />
-                    <TextField
-                      label="Password"
-                      variant="outlined"
-                      type="password"
-                    />
-                    <FormControlLabel control={<Checkbox />} label="Remember me" />
-                    <Button variant="contained">Sign In</Button>
-                  </Stack>
-                )}
-              </Box>
-
-              <Box
-                sx={{
-                  // position: "fixed",
-                  bottom: 0,
-                  width: "100%",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  padding: "10px",
-                  backgroundColor: "transparent",
-                }}
-              >
-                <Typography
-                  variant="h5"
-                  component="h5"
-                  color={"white"}
-                  fontSize={"0.65rem"}
-                  fontWeight={"lighter"}
-                  sx={{ mb: 2 }}
-                  align="center"
-                >
-                  Privacy Policy
-                </Typography>
-                <Box sx={{ mx: 1 }}>
-                  <Typography
-                    variant="h5"
-                    component="h5"
-                    color={"white"}
-                    fontSize={"0.65rem"}
-                    fontWeight={"lighter"}
-                    sx={{ mb: 2 }}
-                    align="center"
-                  >
-                    -
-                  </Typography>
-                </Box>
-
-                <Typography
-                  variant="h5"
-                  component="h5"
-                  color={"white"}
-                  fontSize={"0.65rem"}
-                  fontWeight={"lighter"}
-                  sx={{ mb: 2 }}
-                  align="center"
-                >
-                  Terms of Service
-                </Typography>
-                </Box>
-              </Box>
-            </Box>
+            </Stack>
           </Box>
 
-          
-          
-        {/* </Box>
-      </Box> */}
+          <Box
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              flexDirection: "column",
+            }}
+          >
+            {!emailSignIn ? (
+              <>
+                <Stack spacing={1} direction="column">
+                  <Button
+                    variant="contained"
+                    sx={{
+                      backgroundColor:
+                        "rgba(232,189,219,1) 1",
+                    }}
+                    onClick={handleEmailSignIn}
+                  >
+                    Sign in with Email
+                  </Button>
+                  <Button
+                    variant="contained"
+                    sx={{ backgroundColor: "white", color: "black" }}
+                    startIcon={<GoogleIcon />}
+                    onClick={handleLogin}
+                  >
+                    Sign in with Google
+                  </Button>
+                  <Button variant="contained" startIcon={<FacebookIcon />}>
+                    Sign in with Facebook
+                  </Button>
+
+                  <Button variant="contained">Sign Up</Button>
+                </Stack>
+              </>
+            ) : (
+              <Stack spacing={2} direction="column">
+                <Button
+                  startIcon={<ArrowBackIcon />}
+                  onClick={() => setEmailSignIn(false)}
+                  sx={{
+                    position: "absolute",
+                    top: 60,
+                    left: 8,
+                    color: "white",
+                  }}
+                >
+                  Back
+                </Button>
+                <TextField label="Email" variant="outlined" />
+                <TextField
+                  label="Password"
+                  variant="outlined"
+                  type="password"
+                />
+                <FormControlLabel control={<Checkbox />} label="Remember me" />
+                <Button variant="contained">Sign In</Button>
+              </Stack>
+            )}
+          </Box>
+          <Box
+            sx={{
+              position: "fixed",
+              bottom: 0,
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              padding: "10px",
+              backgroundColor: "transparent",
+            }}
+          >
+            <Typography
+              variant="h5"
+              component="h5"
+              color={"white"}
+              fontSize={"0.65rem"}
+              fontWeight={"lighter"}
+              sx={{ mb: 2 }}
+              align="center"
+            >
+              Privacy Policy
+            </Typography>
+            <Box sx={{ mx: 1 }}>
+              <Typography
+                variant="h5"
+                component="h5"
+                color={"white"}
+                fontSize={"0.65rem"}
+                fontWeight={"lighter"}
+                sx={{ mb: 2 }}
+                align="center"
+              >
+                -
+              </Typography>
+            </Box>
+
+            <Typography
+              variant="h5"
+              component="h5"
+              color={"white"}
+              fontSize={"0.65rem"}
+              fontWeight={"lighter"}
+              sx={{ mb: 2 }}
+              align="center"
+            >
+              Terms of Service
+            </Typography>
+          </Box>
+        </Box>
+      </Box>
     </>
   );
 }

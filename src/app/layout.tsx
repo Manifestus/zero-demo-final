@@ -22,46 +22,15 @@ export default function RootLayout(props: { children: React.ReactNode }) {
           <ThemeProvider theme={theme}>
             {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
             <CssBaseline />
-            <Box sx= {{ 
-                display: "flex",
-                flexDirection: "column",
-                flexGrow: 1,
-                flexShrink: 1,
-                flexBasis: "auto",
-                alignSelf: "stretch",
 
-                alignItems: "center",
-                justifyContent: "center",
-            }}>
-              <Box 
-                sx= {{ display: "flex", flexDirection: "column",
-                maxWidth: "1200px" , minHeight: "100%", "flex": 1, overflowY: "auto",
-              }}>
-
-            
             {login && <AuthScreen isLoggedIn={setLogin} />}
-            {!login && 
-                <>
-                  <Box sx={{ 
-                        display: 'flex', flexDirection: 'column', 
-                        minHeight: '100%',
-                        width: "100%",
-                        minWidth: "min(100vw, 600px)",
-                        backgroundColor: "lightBlue",
-                        
-                        }}>
-                    {/* Main Content Area */}
-                    <Box component="main" sx={{ flex: '1 1 auto', overflowY: 'auto', py: 2, px: 3 }}>
-                      { props.children }
-                    </Box>
-                    
-                    {/* Fixed Footer */}
-                    <BottomMenu/>
-                  </Box>
-                </>
-            }
-            </Box>
-            </Box>
+            {!login && (
+              <>
+                {/* Main Content Area */}
+                {props.children}
+                {/* Fixed Footer */}
+              </>
+            )}
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
