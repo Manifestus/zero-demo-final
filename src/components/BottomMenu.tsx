@@ -47,7 +47,7 @@ export default function BottomMenu() {
                 <LinkImageCentered href="/page1"><MarkAsUnreadOutlinedIcon></MarkAsUnreadOutlinedIcon></LinkImageCentered>
             </li>
             <li style={{ position: "absolute", top: "39%", left: "30%"}}>
-                <LinkImageCentered href="/page2"><PeopleAltOutlinedIcon></PeopleAltOutlinedIcon></LinkImageCentered>
+                <LinkImageCentered href="/profile"><PeopleAltOutlinedIcon></PeopleAltOutlinedIcon></LinkImageCentered>
             </li>
             <li style={{ position: "absolute", top: "0px", left: "50%"}}>
                 <LinkImageCentered href="/page3">

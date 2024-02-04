@@ -23,7 +23,7 @@ import Diversity1Icon from "@mui/icons-material/Diversity1";
 export default function ProfilePage() {
   return (
     <Paper>
-      <Box
+      {/* <Box
         style={{
           display: "flex",
           justifyContent: "center",
@@ -32,12 +32,14 @@ export default function ProfilePage() {
           background: "#f0f4f1",
           position: "relative",
         }}
-      >
+      > */}
         <Box
           style={{
             display: "flex",
             justifyContent: "center",
-            height: "75vh",
+            // height: "75vh",
+            // width: "100%",
+            height: "100%",
             width: "100%",
             background:
               "linear-gradient(0deg, rgba(191,194,254,1) 74%, rgba(232,189,219,1) 100%)",
@@ -57,15 +59,15 @@ export default function ProfilePage() {
             sx={{
               width: "230px",
               height: "230px",
-              position: "absolute",
-              top: -110,
+              // position: "absolute",
+              // top: -110,
             }}
           />
           <Grid
             container
             sx={{
-              position: "absolute",
-              top: 120,
+              // position: "absolute",
+              // top: 120,
               justifyContent: "center",
               alignItems: "center",
               alignContent: "center",
@@ -154,7 +156,7 @@ export default function ProfilePage() {
             </Stack>
           </Box>
         </Box>
-      </Box>
+      {/* </Box> */}
     </Paper>
   );
 }

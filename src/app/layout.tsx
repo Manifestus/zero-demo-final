@@ -47,11 +47,12 @@ export default function RootLayout(props: { children: React.ReactNode }) {
                         minHeight: '100%',
                         width: "100%",
                         minWidth: "min(100vw, 600px)",
+                        overflowX: "hidden",
                         backgroundColor: "lightBlue",
                         
                         }}>
                     {/* Main Content Area */}
-                    <Box component="main" sx={{ flex: '1 1 auto', overflowY: 'auto', py: 2, px: 3 }}>
+                    <Box component="main" sx={{ flex: '1 1 auto'}}>
                       { props.children }
                     </Box>
                     
