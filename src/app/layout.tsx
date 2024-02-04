@@ -56,7 +56,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
                     </Box>
                     
                     {/* Fixed Footer */}
-                    <BottomMenu></BottomMenu>
+                    <BottomMenu />
                   </Box>
                 </>
             }
