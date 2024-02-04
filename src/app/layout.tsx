@@ -4,10 +4,16 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import theme from "@/theme";
-import Navbar from "@/components/Navbar";
-import AuthScreen from "./auth/page";
 
-export default function RootLayout(props: { children: React.ReactNode }) {
+import { Box } from "@mui/material";
+import { Typography } from "@mui/material";
+// import Navbar from "@/components/Navbar";
+
+// import BottomMenu from "@/components/BottomMenu";
+import AuthScreen from "./auth/page";
+import BottomMenu from "@/components/BottomMenu";
+
+export default function RootLayout({ children }) {
   const [login, setLogin] = React.useState(true);
   return (
     <html lang="en">
@@ -16,8 +22,46 @@ export default function RootLayout(props: { children: React.ReactNode }) {
           <ThemeProvider theme={theme}>
             {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
             <CssBaseline />
+            <Box sx= {{ 
+                display: "flex",
+                flexDirection: "column",
+                flexGrow: 1,
+                flexShrink: 1,
+                flexBasis: "auto",
+                alignSelf: "stretch",
+
+                alignItems: "center",
+                justifyContent: "center",
+            }}>
+              <Box 
+                sx= {{ display: "flex", flexDirection: "column",
+                maxWidth: "1200px" , minHeight: "100%", "flex": 1, overflowY: "auto",
+              }}>
+
+            
             {login && <AuthScreen isLoggedIn={setLogin} />}
-            {!login && <>{props.children}</>}
+            {!login && 
+                <>
+                  <Box sx={{ 
+                        display: 'flex', flexDirection: 'column', 
+                        minHeight: '100%',
+                        width: "100%",
+                        minWidth: "600px",
+                        backgroundColor: "lightBlue",
+                        
+                        }}>
+                    {/* Main Content Area */}
+                    <Box component="main" sx={{ flex: '1 1 auto', overflowY: 'auto', py: 2, px: 3 }}>
+                      { children }
+                    </Box>
+                    
+                    {/* Fixed Footer */}
+                    <BottomMenu></BottomMenu>
+                  </Box>
+                </>
+            }
+            </Box>
+            </Box>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
