@@ -1,12 +1,27 @@
-.curvedContainer
+.bottomMenu_container
+{
+    position: relative;
+    height: 75px;
+}
+
+.bottomMenu_curvedDiv_container
+{
+    position: absolute;
+
+    top:    0px;
+    left:   0px;
+    right:  0px;
+
+    height: 75px;
+    overflow-y: clip;
+}
+
+.curvedDiv
 {
     position: relative;
     
-    height: 75px;
-    /* min-height: 150px; */
-    /* margin-bottom: -75px; */
-
-    /* clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%); */
+    height: 150px;
+    margin-bottom: -75px;
 
     border-radius: 50% 50% 0 0;
 
@@ -19,4 +34,14 @@
 .curvedContainer:hover
 {
     box-shadow: 0px 7px 20px 7px white;
+}
+
+.nav_container
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+
+    height: 75px;
 }
