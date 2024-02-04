@@ -29,6 +29,9 @@ export default function RootLayout(props: { children: React.ReactNode }) {
                 {/* Main Content Area */}
                 {props.children}
                 {/* Fixed Footer */}
+                <Box sx={{ position: "fixed", bottom: 0, zIndex: 1000, width: "100vw" }}>
+                  <BottomMenu />
+                </Box>
               </>
             )}
           </ThemeProvider>
