@@ -18,11 +18,17 @@ const theme = createTheme({
   components: {
     MuiCssBaseline: {
       styleOverrides: (themeParam) => ({
+        html: {height:"100%", margin: 0 },
         body: {
           margin: 0,
           padding: 0,
           boxSizing: "border-box",
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          backgroundColor: "lightblue",
         },
+
       }),
     },
     MuiAlert: {

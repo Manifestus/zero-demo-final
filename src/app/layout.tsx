@@ -4,8 +4,14 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import theme from "@/theme";
-import Navbar from "@/components/Navbar";
+
+import { Box } from "@mui/material";
+import { Typography } from "@mui/material";
+// import Navbar from "@/components/Navbar";
+
+// import BottomMenu from "@/components/BottomMenu";
 import AuthScreen from "./auth/page";
+import BottomMenu from "@/components/BottomMenu";
 
 export default function RootLayout(props: { children: React.ReactNode }) {
   const [login, setLogin] = React.useState(true);
@@ -16,8 +22,15 @@ export default function RootLayout(props: { children: React.ReactNode }) {
           <ThemeProvider theme={theme}>
             {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
             <CssBaseline />
+
             {login && <AuthScreen isLoggedIn={setLogin} />}
-            {!login && <>{props.children}</>}
+            {!login && (
+              <>
+                {/* Main Content Area */}
+                {props.children}
+                {/* Fixed Footer */}
+              </>
+            )}
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>

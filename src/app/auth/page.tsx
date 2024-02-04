@@ -67,7 +67,7 @@ export default function AuthScreen(props: { isLoggedIn: (value: boolean) => void
             >
               <img
                 height={"100vh"}
-                src="https://res.cloudinary.com/du7w5i2uh/image/upload/v1706639471/OAI_Placeholder_Logo_-_V1Asset_1_1_isweh1.svg"
+                src="https://res.cloudinary.com/du7w5i2uh/image/upload/v1706895305/OAI_-_PLACEHOLDER_LOGO_zcu9as.png"
               />
             </Box>
             <Stack
