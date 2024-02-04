@@ -152,6 +152,98 @@ export default function ProfilePage() {
               </Typography>
               <Divider sx={{ background: "white", borderBottomWidth: "2px" }} />
             </Stack>
+            {/* Boxes for how and interests */}
+            <Grid container sx={{ position: "absolute", mt: 3 }} spacing={1}>
+              <Grid item xs={6}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    width: "90%",
+                    height: "15vh", // 15% of the parent
+                  }}
+                >
+                  <Box sx={{ display: "flex", justifyContent: "center" }}>
+                    <Stack
+                      spacing={1}
+                      direction={"column"}
+                      alignItems={"center"}
+                      overflow={"auto"}
+                    >
+                      <Typography
+                        variant="h1"
+                        component="h1"
+                        color={"black"}
+                        fontSize={"0.89rem"}
+                        fontWeight={"bold"}
+                      >
+                        HOW CAN I HELP YOU?
+                      </Typography>
+                      <Typography
+                        variant="h1"
+                        component="h1"
+                        color={"black"}
+                        fontSize={"0.79rem"}
+                        fontWeight={"lightest"}
+                      >
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat.
+                      </Typography>
+                    </Stack>
+                  </Box>
+                </Box>
+              </Grid>
+              <Grid item xs={6}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    backgroundColor: "#e1e2ff",
+                    width: "100%",
+                    height: "90%",
+                    boxShadow: 3,
+                    borderRadius: "5%",
+                    justifyContent: "center",
+                    alignContent: "center",
+                    justifyItems: "center",
+                  }}
+                  overflow={"auto"}
+                >
+                  <Box sx={{ display: "flex" }}>
+                    <Stack
+                      spacing={1}
+                      direction={"column"}
+                      alignItems={"center"}
+                      mt={1}
+                    >
+                      <Typography
+                        variant="h1"
+                        component="h1"
+                        color={"black"}
+                        fontSize={"0.89rem"}
+                        align="center"
+                        fontWeight={"bold"}
+                      >
+                        INTERESTS
+                      </Typography>
+                      <Box sx={{ display: "flex", justifyContent: "center", width: "80%", height: "13vh" }}>
+                        <Typography
+                          variant="h1"
+                          component="h1"
+                          color={"black"}
+                          fontSize={"0.79rem"}
+                          fontWeight={"lightest"}
+                        >
+                          #Lorem #ipsum #dolor #sit amet #consectetur #adipiscing
+                          #elit #sed #do #eiusmod 
+                        </Typography>
+                      </Box>
+                    </Stack>
+                  </Box>
+                </Box>
+              </Grid>
+            </Grid>
           </Box>
         </Box>
       </Box>
