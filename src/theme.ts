@@ -18,7 +18,7 @@ const theme = createTheme({
   components: {
     MuiCssBaseline: {
       styleOverrides: (themeParam) => ({
-        html: {height:"100%", margin: 0 },
+        html: { height: "100%", margin: 0 },
         body: {
           margin: 0,
           padding: 0,
@@ -26,9 +26,10 @@ const theme = createTheme({
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          backgroundColor: "lightblue",
+          overflow: "hidden",
+          background:
+            "linear-gradient(180deg, rgb(218 189 232) 0%, rgb(189 197 254) 50%, rgb(187 222 241) 100%)",
         },
-
       }),
     },
     MuiAlert: {

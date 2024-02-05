@@ -31,23 +31,24 @@ export default function ProfilePage() {
           height: "100vh",
           background: "#f0f4f1",
           position: "relative",
+          flexDirection: "column",
         }}
       >
         <Box
           style={{
             display: "flex",
             justifyContent: "center",
-            height: "100vh",
             width: "100%",
             background:
-              "linear-gradient(0deg, rgba(156,248,255,1) 0%, rgba(191,194,254,1) 40%, rgba(232,189,219,1) 100%)",
+              "linear-gradient(180deg, rgb(218 189 232) 0%, rgb(189 197 254) 50%, rgb(187 222 241) 100%)",
           }}
           top={200}
           sx={{
             bgcolor: "background.paper",
             p: 3,
-            borderTopLeftRadius: 25,
-            borderTopRightRadius: 25,
+            flexGrow: 1,
+            width: "100%",
+            borderRadius: "min(8vw, 48px) min(8vw, 48px) 0 0",
             boxShadow: 3,
             position: "relative",
           }}
@@ -60,6 +61,7 @@ export default function ProfilePage() {
               height: "230px",
               position: "absolute",
               top: -110,
+              alignItems: "center",
             }}
           />
           <Grid
@@ -82,17 +84,41 @@ export default function ProfilePage() {
               justifyItems="center"
               direction="column"
             >
-              <Stack spacing={3}>
-                <Typography variant="h6">
-                  <SpaIcon />1
-                </Typography>
-                <Typography>
-                  <Diversity1Icon />2
-                </Typography>
+              <Stack spacing={3} sx={{ mt: 3 }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    gap: 1,
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <SpaIcon />
+                  <Typography variant="h6">25</Typography>
+                </Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    gap: 1,
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Diversity1Icon />
+                  <Typography variant="h6">575</Typography>
+                </Box>
               </Stack>
             </Grid>
-            <Grid container xs={5} justifyContent={"center"}>
-              <Stack spacing={1}>
+            <Grid
+              container
+              xs={4}
+              sx={{
+                justifyContent: "center",
+                flexGrow: 1,
+                alignItems: "center",
+              }}
+            >
+              <Stack spacing={1} sx={{ mt: 3 }}>
                 <Typography
                   variant="h1"
                   component="h1"
