@@ -12,6 +12,7 @@ import { Typography } from "@mui/material";
 // import BottomMenu from "@/components/BottomMenu";
 import AuthScreen from "./auth/page";
 import BottomMenu from "@/components/BottomMenu";
+import ProfileSettings from "@/components/ProfileSettings";
 
 export default function RootLayout(props: { children: React.ReactNode }) {
   const [login, setLogin] = React.useState(true);

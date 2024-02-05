@@ -19,10 +19,12 @@ import Navbar from "@/components/Navbar";
 import SpaIcon from "@mui/icons-material/Spa";
 import GroupsIcon from "@mui/icons-material/Groups";
 import Diversity1Icon from "@mui/icons-material/Diversity1";
+import ProfileSettings from "@/components/ProfileSettings";
 
 export default function ProfilePage() {
   return (
     <Paper>
+      <ProfileSettings />
       <Box
         style={{
           display: "flex",

@@ -56,10 +56,10 @@ export default function BottomMenu() {
                       borderRadius: "50%",
                       backgroundColor: "rgba(255,255,255)",
                       textAlign: "center",
-                      paddingTop: "0.8em",
+                      paddingTop: "0.2em",
                     }}
                   >
-                    <img width={30} height={30} src="https://res.cloudinary.com/du7w5i2uh/image/upload/v1706895299/OAI_-_PLACEHOLDER_LOGO_-_V2_rztmgk.svg"/>
+                    <img width={50} height={50} src="https://res.cloudinary.com/du7w5i2uh/image/upload/v1706895299/OAI_-_PLACEHOLDER_LOGO_-_V2_rztmgk.svg"/>
                   </div>
                 </LinkImageCentered>
               </li>
