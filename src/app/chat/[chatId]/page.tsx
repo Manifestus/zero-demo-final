@@ -11,8 +11,10 @@ import {
 import SearchIcon from "@mui/icons-material/Search";
 import TransitionProvider from "@/components/TransitionProvider";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
+import { messenger } from "@/app/utils/people";
 
-export default function Chat() {
+export default function Chat({ params }: { params: { chatId: number } }) {
   const messages = [
     {
       sender: "John Doe",
@@ -32,6 +34,7 @@ export default function Chat() {
       avatar: "/path/to/recipient/avatar.jpg",
     },
   ];
+
   return (
     <TransitionProvider>
       <motion.div
@@ -73,14 +76,14 @@ export default function Chat() {
               fontWeight: "bold",
             }}
           >
-            Messaging
+            Chat
           </Typography>
           <Box sx={{ display: "flex", width: "100vw" }}>
             <Paper
               component="form"
               sx={{
                 mb: 1,
-                ml: 1,
+                ml: 5,
                 display: "flex",
                 alignItems: "center",
                 width: 200,
@@ -125,42 +128,86 @@ export default function Chat() {
             overflowY: "auto",
           }}
         >
-          {messages.map((message, index) => (
-            <Box
-              key={index}
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                alignSelf: message.isSender ? "flex-end" : "flex-start",
-                mb: 2,
-                p: 1,
-                backgroundColor: message.isSender
-                  ? "#abd5e0"
-                  : "rgba(0, 0, 0, 0.35)",
-                maxWidth: "70%",
-                borderBottomRightRadius: message.isSender ? 0 : "20px",
-                borderTopLeftRadius: message.isSender ? "20px" : 0,
-                borderTopRightRadius: "20px",
-                borderBottomLeftRadius: "20px",
-              }}
-            >
-              {message.isSender ? null : (
-                <Avatar src={message.avatar} alt={message.sender} />
-              )}
-              <Box sx={{ ml: 1 }}>
-                {message.isSender ? null : (
-                  <Typography variant="subtitle1" color={"white"}>
-                    {message.sender}
-                  </Typography>
+          {messenger[params.chatId].messages.map((message, index) => (
+            <>
+              <Box
+                key={index}
+                sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignSelf: "flex-end",
+                  mb: 2,
+                  p: 1,
+                  backgroundColor: "#abd5e0",
+                  maxWidth: "70%",
+                  borderBottomRightRadius: 0,
+                  borderTopLeftRadius: "20px",
+                  borderTopRightRadius: "20px",
+                  borderBottomLeftRadius: "20px",
+                }}
+              >
+                {message.senderMessage ? null : (
+                  <Avatar
+                    src={messenger[params.chatId].avatar}
+                    alt={message.senderMessage}
+                  />
                 )}
-                <Typography variant="body1" color={"white"}>
-                  {message.message}
-                </Typography>
+                <Box sx={{ ml: 1 }}>
+                  {message.senderMessage ? null : (
+                    <Typography variant="subtitle1" color={"white"}>
+                      {message.senderMessage}
+                    </Typography>
+                  )}
+                  <Typography variant="body1" color={"white"}>
+                    {message.senderMessage}
+                  </Typography>
+                </Box>
               </Box>
-            </Box>
+              <Box
+                key={index}
+                sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignSelf: "flex-start",
+                  mb: 2,
+                  p: 1,
+                  backgroundColor: "rgba(0, 0, 0, 0.35)",
+                  maxWidth: "70%",
+                  borderBottomRightRadius: "20px",
+                  borderTopLeftRadius: 0,
+                  borderTopRightRadius: "20px",
+                  borderBottomLeftRadius: "20px",
+                }}
+              >
+                {message.receiverMessage ? null : (
+                  <Avatar
+                    src={messenger[params.chatId].avatar}
+                    alt={message.receiverMessage}
+                  />
+                )}
+                <Box sx={{ ml: 1 }}>
+                  {message.receiverMessage ? null : (
+                    <Typography variant="subtitle1" color={"white"}>
+                      {message.receiverMessage}
+                    </Typography>
+                  )}
+                  <Typography variant="body1" color={"white"}>
+                    {message.receiverMessage}
+                  </Typography>
+                </Box>
+              </Box>
+            </>
           ))}
         </Box>
       </Box>
-      </TransitionProvider>
+      <Box
+          sx={{
+            height: `${100}px`,
+            overflowY: "auto",
+            border: "none",
+            boxShadow: "none",
+          }}
+        ></Box>
+    </TransitionProvider>
   );
 }

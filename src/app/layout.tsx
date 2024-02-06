@@ -19,6 +19,8 @@ import { useState } from "react";
 
 export default function RootLayout(props: { children: React.ReactNode }) {
   const [login, setLogin] = useState(true);
+  const [messenger, setMessenger] = useState(0);
+  
   return (
     <html lang="en">
       <body>

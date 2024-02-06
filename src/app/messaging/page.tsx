@@ -20,6 +20,8 @@ import SearchIcon from "@mui/icons-material/Search";
 import ProfileSettings from "@/components/ProfileSettings";
 import TransitionProvider from "@/components/TransitionProvider";
 import { motion } from "framer-motion";
+import { messenger } from "../utils/people";
+import Link from "next/link";
 
 function notificationsLabel(count: number) {
   if (count === 0) {
@@ -32,15 +34,6 @@ function notificationsLabel(count: number) {
 }
 
 export default function Messaging() {
-  const messages = [
-    {
-      name: "John Doe",
-      message: "Hello, world!",
-      date: "2022-01-01",
-      count: 5,
-    },
-  ];
-
   return (
     <TransitionProvider>
       <motion.div
@@ -116,20 +109,20 @@ export default function Messaging() {
       ></Box>
       <Box
         sx={{
-          height: `${messages.length * 200}px`,
+          height: `100vh`,
           overflowY: "auto",
           border: "none",
           boxShadow: "none",
         }}
       >
         <List>
-          {messages.map((message, index) => (
-            <>
+          {messenger.map((message, index) => (
+            <Link href={`/chat/${index}`} passHref style={{ textDecoration: "none", color: "black" }}>
               <ListItem component={motion.li} key={index}>
                 <ListItemAvatar>
                   <Avatar
                     alt={message.name}
-                    src="/static/images/avatar/1.jpg"
+                    src={message.avatar}
                     sx={{ width: 56, height: 56 }}
                   />
                 </ListItemAvatar>
@@ -138,18 +131,22 @@ export default function Messaging() {
                   sx={{ display: "inline", pl: 2 }}
                   secondary={
                     <>
-                      <Typography
-                        sx={{ display: "inline" }}
-                        component="span"
-                        variant="body2"
-                        color="text.primary"
-                      >
-                        {message.message}
-                      </Typography>
-                      {` — ${message.date}`}
+                      <Box sx={{ display: "flex", width: "60vw" }}>
+                        <Typography
+                          sx={{ display: "inline", width: "100%" }}
+                          component="span"
+                          variant="body2"
+                          color="text.primary"
+                        >
+                          {message.messages[0].receiverMessage}
+                        </Typography>
+                      </Box>
+                      {` — ${
+                        message.date.getMonth() + 1
+                      }/${message.date.getDate()}/${message.date.getFullYear()}`}
                       <IconButton
                         aria-label={notificationsLabel(100)}
-                        sx={{ position: "absolute", top: 18, right: 35 }}
+                        sx={{ position: "absolute", top: 30, right: 30 }}
                       >
                         <Badge badgeContent={message.count} color="secondary">
                           <MailIcon />
@@ -160,12 +157,12 @@ export default function Messaging() {
                 />
               </ListItem>
               <Divider variant="middle" color="white" />
-            </>
+            </Link>
           ))}
         </List>
         <Box
           sx={{
-            height: `${100}px`,
+            height: `25vh`,
             overflowY: "auto",
             border: "none",
             boxShadow: "none",
