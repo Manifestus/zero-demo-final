@@ -37,66 +37,6 @@ export default function Messaging() {
       date: "2022-01-01",
       count: 5,
     },
-    {
-      name: "John Doe",
-      message: "Hello, world!",
-      date: "2022-01-01",
-      count: 5,
-    },
-    {
-      name: "John Doe",
-      message: "Hello, world!",
-      date: "2022-01-01",
-      count: 5,
-    },
-    {
-      name: "John Doe",
-      message: "Hello, world!",
-      date: "2022-01-01",
-      count: 5,
-    },
-    {
-      name: "John Doe",
-      message: "Hello, world!",
-      date: "2022-01-01",
-      count: 5,
-    },
-    {
-      name: "John Doe",
-      message: "Hello, world!",
-      date: "2022-01-01",
-      count: 5,
-    },
-    {
-      name: "John Doe",
-      message: "Hello, world!",
-      date: "2022-01-01",
-      count: 5,
-    },
-    {
-      name: "John Doe",
-      message: "Hello, world!",
-      date: "2022-01-01",
-      count: 5,
-    },
-    {
-      name: "John Doe",
-      message: "Hello, world!",
-      date: "2022-01-01",
-      count: 5,
-    },
-    {
-      name: "John Doe",
-      message: "Hello, world!",
-      date: "2022-01-01",
-      count: 5,
-    },
-    {
-      name: "John Doe",
-      message: "Hello, world!",
-      date: "2022-01-01",
-      count: 5,
-    },
   ];
 
   return (

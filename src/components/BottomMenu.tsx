@@ -38,17 +38,17 @@ export default function BottomMenu() {
           <nav>
             <ul style={{ listStyleType: "none" }}>
               <li style={{ position: "absolute", top: "78%", left: "10%" }}>
-                <LinkImageCentered href="/page1">
-                  <MarkAsUnreadOutlinedIcon></MarkAsUnreadOutlinedIcon>
+                <LinkImageCentered href="/messaging">
+                  <MarkAsUnreadOutlinedIcon sx={{color: "#323232"}}></MarkAsUnreadOutlinedIcon>
                 </LinkImageCentered>
               </li>
               <li style={{ position: "absolute", top: "39%", left: "30%" }}>
-                <LinkImageCentered href="/page2">
-                  <PeopleAltOutlinedIcon></PeopleAltOutlinedIcon>
+                <LinkImageCentered href="/members">
+                  <PeopleAltOutlinedIcon sx={{color: "#323232"}}></PeopleAltOutlinedIcon>
                 </LinkImageCentered>
               </li>
               <li style={{ position: "absolute", top: "0px", left: "50%" }}>
-                <LinkImageCentered href="/page3">
+                <LinkImageCentered href="/">
                   <div
                     style={{
                       height: "60px",
@@ -64,13 +64,13 @@ export default function BottomMenu() {
                 </LinkImageCentered>
               </li>
               <li style={{ position: "absolute", top: "39%", left: "70%" }}>
-                <LinkImageCentered href="/page4">
-                  <Diversity1OutlinedIcon></Diversity1OutlinedIcon>
+                <LinkImageCentered href="/donation">
+                  <Diversity1OutlinedIcon sx={{color: "#323232"}}></Diversity1OutlinedIcon>
                 </LinkImageCentered>
               </li>
               <li style={{ position: "absolute", top: "78%", left: "90%" }}>
-                <LinkImageCentered href="/page5">
-                  <TodayOutlinedIcon></TodayOutlinedIcon>
+                <LinkImageCentered href="/calendar">
+                  <TodayOutlinedIcon sx={{color: "#323232"}}></TodayOutlinedIcon>
                 </LinkImageCentered>
               </li>
 

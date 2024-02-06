@@ -141,14 +141,14 @@ export default function DateCalendarServerRequest() {
               fontWeight: "bold",
             }}
           >
-            Messaging
+            Calendar
           </Typography>
           <Box sx={{ display: "flex", width: "100vw" }}>
             <Paper
               component="form"
               sx={{
                 mb: 1,
-                ml: 1,
+                ml: 2,
                 display: "flex",
                 alignItems: "center",
                 width: 200,

@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
-import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
-import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
+import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
+import Link from "next/link";
 
 export default function ProfileSettings() {
   return (
@@ -15,7 +16,12 @@ export default function ProfileSettings() {
         padding: "30px",
       }}
     >
-      <Person2OutlinedIcon sx={{width: 27, height: 27, fontSize: "small"}} /> <SettingsOutlinedIcon sx={{width: 27, height: 27}}/>
+      <Link href="/profile">
+        <Person2OutlinedIcon
+          sx={{ color: "#646464", width: 27, height: 27, fontSize: "small" }}
+        />
+      </Link>
+      <SettingsOutlinedIcon sx={{ color: "#646464", width: 27, height: 27 }} />
     </Box>
   );
 }
