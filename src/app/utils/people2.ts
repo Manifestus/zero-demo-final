@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker/locale/en";
 
-export const messenger = Array.from({ length: 10 }, () => ({
+export const people2 = Array.from({ length: 10 }, () => ({
     avatar: faker.image.urlLoremFlickr({ category: "people" }),
     name: faker.company.name(),
     date: faker.date.recent(),

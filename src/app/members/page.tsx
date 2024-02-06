@@ -22,6 +22,8 @@ import { Chat, Phone, VideoCall } from "@mui/icons-material";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import { motion } from "framer-motion";
 import TransitionProvider from "@/components/TransitionProvider";
+import { people2 } from "../utils/people2";
+import { messenger } from "../utils/people";
 
 export default function Members() {
   const [alignment, setAlignment] = useState<string | null>("members");
@@ -32,14 +34,6 @@ export default function Members() {
   ) => {
     setAlignment(newAlignment);
   };
-
-  const members = [
-    {
-      name: "John Doe",
-      phoneNumber: "123-456-7890",
-      avatar: "/path/to/avatar.jpg",
-    },
-  ];
 
   return (
     <TransitionProvider>
@@ -121,7 +115,7 @@ export default function Members() {
       ></Box>
       <Box
         sx={{
-          height: `${members.length * 200}px`,
+          height: `100vh`,
           overflowY: "auto",
           border: "none",
           boxShadow: "none",
@@ -133,7 +127,7 @@ export default function Members() {
               width: "100vw",
             }}
           >
-            {members.map((member, index) => (
+            {messenger.map((member, index) => (
               <>
                 <ListItem component={motion.li} key={index}>
                   <ListItemAvatar>
@@ -213,7 +207,7 @@ export default function Members() {
               width: "100vw",
             }}
           >
-            {members.map((member, index) => (
+            {people2.map((member, index) => (
               <>
                 <ListItem component={motion.li} key={index}>
                   <ListItemAvatar>
@@ -266,7 +260,7 @@ export default function Members() {
 
         <Box
           sx={{
-            height: `${100}px`,
+            height: `25vh`,
             overflowY: "auto",
             border: "none",
             boxShadow: "none",
