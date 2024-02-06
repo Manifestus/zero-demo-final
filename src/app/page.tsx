@@ -47,9 +47,9 @@ export default function Home() {
             width="100%"
             height="80%"
           />
-          <Button variant="contained" sx={{ width: "50%" }}>
+          {/* <Button variant="contained" sx={{ width: "50%" }}>
             Start
-          </Button>
+          </Button> */}
         </Stack>
       </Box>
     </>
