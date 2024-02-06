@@ -24,6 +24,7 @@ import Diversity1Icon from "@mui/icons-material/Diversity1";
 import ProfileSettings from "@/components/ProfileSettings";
 import TransitionProvider from "@/components/TransitionProvider";
 import { motion } from "framer-motion";
+import { profile } from "../utils/profile";
 
 export default function ProfilePage() {
   return (
@@ -67,7 +68,7 @@ export default function ProfilePage() {
           >
             <Avatar
               alt="Profile Picture"
-              src="/static/images/avatar/1.jpg"
+              src={profile.avatar}
               sx={{
                 width: "230px",
                 height: "230px",
@@ -139,7 +140,7 @@ export default function ProfilePage() {
                     fontWeight={"bold"}
                     align="center"
                   >
-                    Princess Reema
+                    {profile.name}
                   </Typography>
                   <Typography
                     variant="h1"
@@ -149,7 +150,7 @@ export default function ProfilePage() {
                     fontWeight={"bold"}
                     align="center"
                   >
-                    https://www.thevine.earth/princessreema
+                    {`https://www.thevine.earth/${profile.nickname}`}
                   </Typography>
                 </Stack>
               </Grid>
@@ -186,10 +187,7 @@ export default function ProfilePage() {
                   align="center"
                   fontWeight={"lightest"}
                 >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
+                  {profile.paragraph1}
                 </Typography>
                 <Divider
                   sx={{ background: "white", borderBottomWidth: "2px" }}
@@ -228,11 +226,7 @@ export default function ProfilePage() {
                           fontSize={"0.79rem"}
                           fontWeight={"lightest"}
                         >
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Ut enim ad minim veniam, quis
-                          nostrud exercitation ullamco laboris nisi ut aliquip
-                          ex ea commodo consequat.
+                          {profile.paragraph2}
                         </Typography>
                       </Stack>
                     </Box>
@@ -285,8 +279,7 @@ export default function ProfilePage() {
                             fontSize={"0.79rem"}
                             fontWeight={"lightest"}
                           >
-                            #Lorem #ipsum #dolor #sit amet #consectetur
-                            #adipiscing #elit #sed #do #eiusmod
+                            {profile.interests.join(" ")}
                           </Typography>
                         </Box>
                       </Stack>
@@ -315,11 +308,11 @@ export default function ProfilePage() {
                 }}
               >
                 <Grid container spacing={{ xs: 1, md: 3 }}>
-                  {[...Array(9)].map((_, index) => (
-                    <Grid item xs={3} sm={6} md={4} key={index}>
+                  {profile.images.map((image, index) => (
+                    <Grid item xs={4} sm={6} md={4} key={index}>
                       <MuiBox
                         component="img"
-                        src="/path/to/your/image.jpg" // Replace with your image path
+                        src={image} // Replace with your image path
                         sx={{ width: "100%", height: "auto" }}
                         alt="Image"
                       />
