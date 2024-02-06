@@ -1,17 +1,25 @@
+"use client";
 import {
   Avatar,
   Badge,
   Box,
   Divider,
   IconButton,
+  InputBase,
   List,
   ListItem,
   ListItemAvatar,
   ListItemText,
   Paper,
+  TextField,
+  ToggleButtonGroup,
   Typography,
 } from "@mui/material";
 import MailIcon from "@mui/icons-material/Mail";
+import SearchIcon from "@mui/icons-material/Search";
+import ProfileSettings from "@/components/ProfileSettings";
+import TransitionProvider from "@/components/TransitionProvider";
+import { motion } from "framer-motion";
 
 function notificationsLabel(count: number) {
   if (count === 0) {
@@ -31,86 +39,19 @@ export default function Messaging() {
       date: "2022-01-01",
       count: 5,
     },
-    {
-      name: "John Doe",
-      message: "Hello, world!",
-      date: "2022-01-01",
-      count: 5,
-    },
-    {
-      name: "John Doe",
-      message: "Hello, world!",
-      date: "2022-01-01",
-      count: 5,
-    },
-    {
-      name: "John Doe",
-      message: "Hello, world!",
-      date: "2022-01-01",
-      count: 5,
-    },
-    {
-      name: "John Doe",
-      message: "Hello, world!",
-      date: "2022-01-01",
-      count: 5,
-    },
-    {
-      name: "John Doe",
-      message: "Hello, world!",
-      date: "2022-01-01",
-      count: 5,
-    },
-    {
-      name: "John Doe",
-      message: "Hello, world!",
-      date: "2022-01-01",
-      count: 5,
-    },
-    {
-      name: "John Doe",
-      message: "Hello, world!",
-      date: "2022-01-01",
-      count: 5,
-    },
-    {
-      name: "John Doe",
-      message: "Hello, world!",
-      date: "2022-01-01",
-      count: 5,
-    },
-    {
-      name: "John Doe",
-      message: "Hello, world!",
-      date: "2022-01-01",
-      count: 5,
-    },
-    {
-      name: "John Doe",
-      message: "Hello, world!",
-      date: "2022-01-01",
-      count: 5,
-    },
-    {
-      name: "John Doe",
-      message: "Hello, world!",
-      date: "2022-01-01",
-      count: 5,
-    },
-
-    {
-      name: "John Doe",
-      message: "Hello, world!",
-      date: "2022-01-01",
-      count: 5,
-    },
   ];
+
   return (
-    <>
+    <TransitionProvider>
+      <motion.div
+        initial={{ opacity: 1 }}
+        animate={{ opacity: 2 }}
+        exit={{ opacity: 1 }}
+      />
       <Box
         sx={{
           display: "flex",
-          height: `100px`,
+          height: `120px`,
           position: "fixed",
           zIndex: 1000,
           width: "100vw",
@@ -118,29 +59,58 @@ export default function Messaging() {
           flexShrink: 0,
         }}
       >
-        <Box sx={{ display: "flex", justifyContent: "center", width: "100%", alignItems: "end", }}>
-        <Typography
+        <ProfileSettings />
+        <Box
           sx={{
             display: "flex",
-            pl: 2,
-            pb: 1,
+            width: "10%",
             alignItems: "end",
-            width: "100%",
-            height: "100%",
-            fontSize: "1rem",
-            fontWeight: "bold",
+            justifyContent: "start",
+            alignContent: "center",
+            flexGrow: 1,
           }}
         >
-          Messaging
-        </Typography>
+          <Typography
+            sx={{
+              display: "flex",
+              pl: 2,
+              pb: 1,
+              mr: 2,
+              alignItems: "end",
+              height: "100%",
+              fontSize: "0.9rem",
+              fontWeight: "bold",
+            }}
+          >
+            Messaging
+          </Typography>
+          <Box sx={{ display: "flex", width: "100vw" }}>
+            <Paper
+              component="form"
+              sx={{
+                mb: 1,
+                ml: 1,
+                display: "flex",
+                alignItems: "center",
+                width: 200,
+                borderRadius: "20px",
+                background: "rgba(255, 255, 255, 0.65)",
+                height: "30px",
+              }}
+            >
+              <IconButton type="button" aria-label="search">
+                <SearchIcon />
+              </IconButton>
+              <InputBase inputProps={{ "aria-label": "search google maps" }} />
+            </Paper>
+          </Box>
         </Box>
-        
       </Box>
       //adding an extra box to make the messages not top with bar
       <Box
         sx={{
           display: "flex",
-          height: `70px`,
+          height: `65px`,
           flexShrink: 0,
         }}
       ></Box>
@@ -155,15 +125,17 @@ export default function Messaging() {
         <List>
           {messages.map((message, index) => (
             <>
-              <ListItem key={index}>
+              <ListItem component={motion.li} key={index}>
                 <ListItemAvatar>
                   <Avatar
                     alt={message.name}
                     src="/static/images/avatar/1.jpg"
+                    sx={{ width: 56, height: 56 }}
                   />
                 </ListItemAvatar>
                 <ListItemText
                   primary={message.name}
+                  sx={{ display: "inline", pl: 2 }}
                   secondary={
                     <>
                       <Typography
@@ -175,7 +147,10 @@ export default function Messaging() {
                         {message.message}
                       </Typography>
                       {` — ${message.date}`}
-                      <IconButton aria-label={notificationsLabel(100)}>
+                      <IconButton
+                        aria-label={notificationsLabel(100)}
+                        sx={{ position: "absolute", top: 18, right: 35 }}
+                      >
                         <Badge badgeContent={message.count} color="secondary">
                           <MailIcon />
                         </Badge>
@@ -197,6 +172,6 @@ export default function Messaging() {
           }}
         ></Box>
       </Box>
-    </>
+    </TransitionProvider>
   );
 }

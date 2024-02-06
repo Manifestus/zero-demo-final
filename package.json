@@ -9,6 +9,9 @@
     "lint": "next lint",
     "post-update": "echo \"codesandbox preview only, need an update\" && pnpm update --latest"
   },
+  "resolutions": {
+    "react-scripts/webpack": "5.70.0"
+  },
   "dependencies": {
     "@emotion/cache": "latest",
     "@emotion/react": "latest",
@@ -16,6 +19,9 @@
     "@mui/icons-material": "^5.15.7",
     "@mui/material": "latest",
     "@mui/material-nextjs": "latest",
+    "@mui/x-date-pickers": "^6.19.3",
+    "date-fns": "^3.3.1",
+    "dayjs": "^1.11.10",
     "framer-motion": "^11.0.3",
     "next": "latest",
     "react": "latest",
