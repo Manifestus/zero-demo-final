@@ -13,6 +13,8 @@ import { Typography } from "@mui/material";
 import AuthScreen from "./auth/page";
 import BottomMenu from "@/components/BottomMenu";
 import ProfileSettings from "@/components/ProfileSettings";
+import { AnimatePresence, motion } from "framer-motion";
+import TransitionProvider from "@/components/TransitionProvider";
 
 export default function RootLayout(props: { children: React.ReactNode }) {
   const [login, setLogin] = React.useState(true);
@@ -27,9 +29,16 @@ export default function RootLayout(props: { children: React.ReactNode }) {
             {!login && (
               <>
                 {/* Main Content Area */}
-                {props.children}
+                <TransitionProvider>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                  />
+                  {props.children}
+                </TransitionProvider>
                 {/* Fixed Footer */}
-                  <BottomMenu />
+                <BottomMenu />
               </>
             )}
           </ThemeProvider>

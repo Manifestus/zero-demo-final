@@ -8,6 +8,8 @@ import {
   Typography,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import TransitionProvider from "@/components/TransitionProvider";
+import { motion } from "framer-motion";
 
 export default function Chat() {
   const messages = [
@@ -30,7 +32,12 @@ export default function Chat() {
     },
   ];
   return (
-    <>
+    <TransitionProvider>
+      <motion.div
+        initial={{ opacity: 1 }}
+        animate={{ opacity: 2 }}
+        exit={{ opacity: 1 }}
+      />
       <Box
         sx={{
           display: "flex",
@@ -153,6 +160,6 @@ export default function Chat() {
           ))}
         </Box>
       </Box>
-    </>
+      </TransitionProvider>
   );
 }

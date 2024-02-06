@@ -18,6 +18,8 @@ import {
 import MailIcon from "@mui/icons-material/Mail";
 import SearchIcon from "@mui/icons-material/Search";
 import ProfileSettings from "@/components/ProfileSettings";
+import TransitionProvider from "@/components/TransitionProvider";
+import { motion } from "framer-motion";
 
 function notificationsLabel(count: number) {
   if (count === 0) {
@@ -40,7 +42,12 @@ export default function Messaging() {
   ];
 
   return (
-    <>
+    <TransitionProvider>
+      <motion.div
+        initial={{ opacity: 1 }}
+        animate={{ opacity: 2 }}
+        exit={{ opacity: 1 }}
+      />
       <Box
         sx={{
           display: "flex",
@@ -118,7 +125,7 @@ export default function Messaging() {
         <List>
           {messages.map((message, index) => (
             <>
-              <ListItem key={index}>
+              <ListItem component={motion.li} key={index}>
                 <ListItemAvatar>
                   <Avatar
                     alt={message.name}
@@ -165,6 +172,6 @@ export default function Messaging() {
           }}
         ></Box>
       </Box>
-    </>
+    </TransitionProvider>
   );
 }

@@ -10,6 +10,8 @@ import { DayCalendarSkeleton } from "@mui/x-date-pickers/DayCalendarSkeleton";
 import { Box, IconButton, InputBase, Paper, Typography } from "@mui/material";
 import ProfileSettings from "@/components/ProfileSettings";
 import SearchIcon from "@mui/icons-material/Search";
+import TransitionProvider from "@/components/TransitionProvider";
+import { motion } from "framer-motion";
 
 function getRandomNumber(min: number, max: number) {
   return Math.round(Math.random() * (max - min) + min);
@@ -106,7 +108,12 @@ export default function DateCalendarServerRequest() {
   };
 
   return (
-    <>
+    <TransitionProvider>
+      <motion.div
+        initial={{ opacity: 1 }}
+        animate={{ opacity: 2 }}
+        exit={{ opacity: 1 }}
+      />
       <Box
         sx={{
           display: "flex",
@@ -200,6 +207,6 @@ export default function DateCalendarServerRequest() {
           />
         </LocalizationProvider>
       </Box>
-    </>
+      </TransitionProvider>
   );
 }

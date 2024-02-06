@@ -19,7 +19,9 @@ import AddReactionIcon from "@mui/icons-material/AddReaction";
 import PeopleIcon from "@mui/icons-material/People";
 import { useState } from "react";
 import { Chat, Phone, VideoCall } from "@mui/icons-material";
-import PersonAddIcon from '@mui/icons-material/PersonAdd';
+import PersonAddIcon from "@mui/icons-material/PersonAdd";
+import { motion } from "framer-motion";
+import TransitionProvider from "@/components/TransitionProvider";
 
 export default function Members() {
   const [alignment, setAlignment] = useState<string | null>("members");
@@ -40,7 +42,12 @@ export default function Members() {
   ];
 
   return (
-    <>
+    <TransitionProvider>
+      <motion.div
+        initial={{ opacity: 1 }}
+        animate={{ opacity: 2 }}
+        exit={{ opacity: 1 }}
+      />
       <Box
         sx={{
           display: "flex",
@@ -128,9 +135,13 @@ export default function Members() {
           >
             {members.map((member, index) => (
               <>
-                <ListItem key={index}>
+                <ListItem component={motion.li} key={index}>
                   <ListItemAvatar>
-                    <Avatar alt={member.name} src={member.avatar} />
+                    <Avatar
+                      sx={{ width: 56, height: 56 }}
+                      alt={member.name}
+                      src={member.avatar}
+                    />
                   </ListItemAvatar>
                   <ListItemText
                     sx={{ display: "inline", pl: 2 }}
@@ -146,12 +157,14 @@ export default function Members() {
                           {member.phoneNumber}
                         </Typography>
                         <Box
+                          component={motion.div}
                           sx={{
                             display: "flex",
                             justifyContent: "flex-end",
                           }}
                         >
                           <IconButton
+                            component={motion.button}
                             sx={{
                               color: "#979bcb ",
                               position: "absolute",
@@ -162,6 +175,7 @@ export default function Members() {
                             <Chat />
                           </IconButton>
                           <IconButton
+                            component={motion.button}
                             color="primary"
                             sx={{
                               color: "#979bcb",
@@ -173,6 +187,7 @@ export default function Members() {
                             <Phone />
                           </IconButton>
                           <IconButton
+                            component={motion.button}
                             color="primary"
                             sx={{
                               color: "#979bcb",
@@ -200,9 +215,13 @@ export default function Members() {
           >
             {members.map((member, index) => (
               <>
-                <ListItem key={index}>
+                <ListItem component={motion.li} key={index}>
                   <ListItemAvatar>
-                    <Avatar alt={member.name} src={member.avatar} />
+                    <Avatar
+                      sx={{ width: 56, height: 56 }}
+                      alt={member.name}
+                      src={member.avatar}
+                    />
                   </ListItemAvatar>
                   <ListItemText
                     sx={{ display: "inline", pl: 2 }}
@@ -224,6 +243,7 @@ export default function Members() {
                           }}
                         >
                           <IconButton
+                            component={motion.button}
                             sx={{
                               color: "#979bcb ",
                               position: "absolute",
@@ -253,6 +273,6 @@ export default function Members() {
           }}
         ></Box>
       </Box>
-    </>
+    </TransitionProvider>
   );
 }
