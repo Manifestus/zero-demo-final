@@ -1,27 +1,23 @@
 "use client";
 import React, { useState } from "react";
 import {
+  Button,
   Checkbox,
   FormControlLabel,
   TextField,
+  Box,
   Stack,
   Typography,
   Icon,
   Link,
-  Box,
-  Button,
 } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GoogleIcon from "@mui/icons-material/Google";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { Image, Label } from "@mui/icons-material";
+import Navbar from "@/components/Navbar";
 
-interface Pageprops {
-  isLoggedIn: (value: boolean) => void;
-}
-
-
-export default function AuthScreen({ isLoggedIn }: Pageprops) {
+export default function AuthScreen(props: { isLoggedIn: (value: boolean) => void }) {
   const [emailSignIn, setEmailSignIn] = useState(false);
 
   const handleEmailSignIn = () => {
@@ -29,7 +25,7 @@ export default function AuthScreen({ isLoggedIn }: Pageprops) {
   };
 
   const handleLogin = () => {
-    isLoggedIn(false);
+    props.isLoggedIn(false);
   };
 
   return (

@@ -15,9 +15,10 @@ import BottomMenu from "@/components/BottomMenu";
 import ProfileSettings from "@/components/ProfileSettings";
 import { AnimatePresence, motion } from "framer-motion";
 import TransitionProvider from "@/components/TransitionProvider";
+import { useState } from "react";
 
 export default function RootLayout(props: { children: React.ReactNode }) {
-  const [login, setLogin] = React.useState(true);
+  const [login, setLogin] = useState(true);
   return (
     <html lang="en">
       <body>
