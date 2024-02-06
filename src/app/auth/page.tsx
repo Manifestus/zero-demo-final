@@ -16,8 +16,12 @@ import GoogleIcon from "@mui/icons-material/Google";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { Image, Label } from "@mui/icons-material";
 
+interface Pageprops {
+  isLoggedIn: (value: boolean) => void;
+}
 
-export default function AuthScreen(props: { isLoggedIn: (value: boolean) => void }) {
+
+export default function AuthScreen({ isLoggedIn }: Pageprops) {
   const [emailSignIn, setEmailSignIn] = useState(false);
 
   const handleEmailSignIn = () => {
@@ -25,7 +29,7 @@ export default function AuthScreen(props: { isLoggedIn: (value: boolean) => void
   };
 
   const handleLogin = () => {
-    props.isLoggedIn(false);
+    isLoggedIn(false);
   };
 
   return (
